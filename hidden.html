@@ -9,7 +9,7 @@
 
 <form>
     <label for="form1_secret">Enter the secret word</label>
-    <input type ="password" id="form1_secret" name="form1_secret" min=10 max=50 step=2 value="Secret"> <br>
+    <input onclick="value=''; type='password';" id="form1_secret" name="form1_secret" type="text" value="Secret" /> <br>
 
     <label for="form1_guess">Enter a guess</label>
     <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
@@ -19,6 +19,10 @@
 
 
 <p id="result">Results</p>
+
+<div class="container">
+    <img id="plant" onclick=rotateImage() src="Kalanchoe-Pink-19090334028.jpg" width=200 height=200>
+</div>
 
 <script>
 var correct = 0;
@@ -39,15 +43,31 @@ function processGuess (){
     }
     document.getElementById("result").innerHTML = "correct: ".concat(String(correct).concat(" wrong: ".concat(String(wrong))));
 
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
-    }
 }
+</script>
+<script>
+    var currentImage = 0;
+    function rotateImage(){
+        switch(currentImage){
+            case 0:
+                document.getElementById("plant").src = "zephyranthes-mixture-rain-lilies-mix.jpg";
+                currentImage = 1;
+                console.log(currentImage)
+
+                break;
+            case 1:
+                document.getElementById("plant").src = "572837-1-515Wx515H.jpg";
+                currentImage = 2;
+                console.log(currentImage)
+                break;
+            case 2:
+                document.getElementById("plant").src = "Kalanchoe-Pink-19090334028.jpg";
+                currentImage = 0;
+                console.log(currentImage)
+                break;
+            
+        }
+    }
 </script>
 
 </body>
