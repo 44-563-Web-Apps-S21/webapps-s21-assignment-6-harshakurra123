@@ -66,19 +66,19 @@ function processRadio (){
             console.log(arithmetic_value[i].value)
             if(arithmetic_value[i].value=="plus"){
                 var add = parseFloat(first_value)+parseFloat(second_value)
-                result_value.innerHTML = "Result is " + add
+                result_value.innerHTML = "Result for " + first_value + " + " + second_value + " is " + add
             }
             else if(arithmetic_value[i].value=="minus"){
                 var sub = first_value-second_value
-                result_value.innerHTML = "Result is " + sub
+                result_value.innerHTML = "Result for " + first_value + " - " + second_value + " is " + sub
             }
             else if(arithmetic_value[i].value=="times"){
                 var mul = first_value*second_value
-                result_value.innerHTML = "Result is " + mul
+                result_value.innerHTML = "Result for " + first_value + " * " + second_value + " is " + mul
             }
             else if(arithmetic_value[i].value=="divide"){
                 var div = first_value/second_value
-                result_value.innerHTML = "Result is " + div
+                result_value.innerHTML = "Result for " + first_value + " / " + second_value + " is " + div
             }
         }
     }
