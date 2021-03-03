@@ -12,6 +12,15 @@
     <input type="button" onclick="startbear()" value="Start a bear">
 </form>
 
+<form>
+    <label for="property">Enter a property</label>
+    <input type ="text" id="property" name="property" step=2 value=color> <br>
+
+    <label for="value">Enter a value</label>
+    <input type ="text" id="value" name="value" autofocus value=2> <br>
+
+    <input type="button" onclick="updatebear()" value="Update the bear"> <br>
+</form>
 
 <p id="result">This text will be replaced </p>
 
@@ -23,6 +32,12 @@ function startbear (){
     shirt = document.getElementById("shirt").checked
     out = document.getElementById("result")
     out.innerHTML = "hat: " + hat +", scarf: "+ scarf +", shirt: "+ shirt
+}
+function updatebear (){
+    property = document.getElementById("property").value
+    value = document.getElementById("value").value
+    out = document.getElementById("result")
+    out.innerHTML = "property: " + property + " value: " + value;
 }
 </script>
 
