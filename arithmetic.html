@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Harshavardhan Kurra computes</title>
+</head> 
+
+<body>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="first_input">Enter a number</label>
+    <input type ="number" id="first_input" name="first_input" step=2 value=10> <br>
+
+    <label for="second_input">Enter a number</label>
+    <input type ="number" id="second_input" name="second_input" autofocus value=2> <br>
+
+    <input type="button" onclick="permutations()" value="Compute">
+    
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function permutations (){
+    console.log("Getting form values")
+    first_value = document.getElementById("first_input").value
+    second_value = document.getElementById("second_input").value
+    var product = 1;
+    for (i = first_value; i>=first_value-second_value+1; i--) {
+        product = product*i;
+    }
+    result_value = document.getElementById("result")
+    result_value.innerHTML = first_value + " permute " + second_value + " is " + product;
+
+    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+</script>
+
+</body>
+</html> 
