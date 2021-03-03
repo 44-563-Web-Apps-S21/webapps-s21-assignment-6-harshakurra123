@@ -15,12 +15,30 @@
     <label for="second_input">Enter a number</label>
     <input type ="number" id="second_input" name="second_input" autofocus value=2> <br>
 
-    <input type="button" onclick="permutations()" value="Compute">
-    
+    <input type="button" onclick="permutations()" value="Compute"> <br>
 </form>
 
 
 <p id="result">This text will be replaced </p>
+<form>
+    <input type="radio" id="radio_1" name="arithmetic" value="plus"   
+    checked onclick=processRadio()>
+    <label for="radio_1">+</label></br>
+
+    <input type="radio" id="radio_2" name="arithmetic" 
+        value="minus" onclick=processRadio()>
+    <label for="radio_2">-</label></br>
+
+    <input type="radio" id="radio_3" name="arithmetic"   
+        value="times" onclick=processRadio()>
+    <label for="radio_3">*</label></br>
+    
+    <input type="radio" id="radio_4" name="arithmetic"   
+        value="divide" onclick=processRadio()>
+    <label for="radio_4">/</label></br>
+
+</form>
+<p id="radio_result">This text will be replaced </p>
 
 <script> 
 
@@ -35,14 +53,36 @@ function permutations (){
     result_value = document.getElementById("result")
     result_value.innerHTML = first_value + " permute " + second_value + " is " + product;
 
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
+}
+
+function processRadio (){
+    first_value = document.getElementById("first_input").value
+    second_value = document.getElementById("second_input").value
+    var arithmetic_value = document.getElementsByName("arithmetic")
+    result_value = document.getElementById("radio_result")
+
+    for(i = 0; i < arithmetic_value.length; i++) {
+        if(arithmetic_value[i].checked){
+            console.log(arithmetic_value[i].value)
+            if(arithmetic_value[i].value=="plus"){
+                var add = parseFloat(first_value)+parseFloat(second_value)
+                result_value.innerHTML = "Result is " + add
+            }
+            else if(arithmetic_value[i].value=="minus"){
+                var sub = first_value-second_value
+                result_value.innerHTML = "Result is " + sub
+            }
+            else if(arithmetic_value[i].value=="times"){
+                var mul = first_value*second_value
+                result_value.innerHTML = "Result is " + mul
+            }
+            else if(arithmetic_value[i].value=="divide"){
+                var div = first_value/second_value
+                result_value.innerHTML = "Result is " + div
+            }
+        }
     }
+    
 }
 </script>
 
