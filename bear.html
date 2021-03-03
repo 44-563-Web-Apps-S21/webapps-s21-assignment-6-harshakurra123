@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+
+<h2>Harshavardhan Kurra builds a bear</h2>
+
+<form>
+    <input type="checkbox" id="hat" value="hat"> hat
+    <input type="checkbox" id="scarf" value="scarf"> scarf
+    <input type="checkbox" id="shirt" value="shirt"> shirt
+    <input type="button" onclick="startbear()" value="Start a bear">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+var my_bear = ""
+function startbear (){
+    hat = document.getElementById("hat").checked
+    scarf = document.getElementById("scarf").checked
+    shirt = document.getElementById("shirt").checked
+    out = document.getElementById("result")
+    out.innerHTML = "hat: " + hat +", scarf: "+ scarf +", shirt: "+ shirt
+}
+</script>
+
+</body>
+</html> 
