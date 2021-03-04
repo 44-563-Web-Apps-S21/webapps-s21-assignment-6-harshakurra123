@@ -2,6 +2,12 @@
 <html>
 <head>
     <title>Harshavardhan Kurra calculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head> 
 
 <body>
@@ -10,30 +16,30 @@
 
 <form>
     <label for="first_input">Enter a number</label>
-    <input type ="number" id="first_input" name="first_input" step=2 value=10> <br>
+    <input type ="number" class="form-control" id="first_input" name="first_input" step=2 value=10> <br>
 
     <label for="second_input">Enter a number</label>
-    <input type ="number" id="second_input" name="second_input" autofocus value=2> <br>
+    <input type ="number" class="form-control" id="second_input" name="second_input" autofocus value=2> <br>
 
-    <input type="button" onclick="permutations()" value="Compute"> <br>
+    <input type="button" class="btn btn-primary" onclick="permutations()" value="Compute"> <br>
 </form>
 
 
 <p id="result">This text will be replaced </p>
 <form>
-    <input type="radio" id="radio_1" name="arithmetic" value="plus"   
+    <input type="radio" class="btn" id="radio_1" name="arithmetic" value="plus"   
     checked onclick=processRadio()>
     <label for="radio_1">+</label></br>
 
-    <input type="radio" id="radio_2" name="arithmetic" 
+    <input type="radio" class="btn" id="radio_2" name="arithmetic" 
         value="minus" onclick=processRadio()>
     <label for="radio_2">-</label></br>
 
-    <input type="radio" id="radio_3" name="arithmetic"   
+    <input type="radio" class="btn" id="radio_3" name="arithmetic"   
         value="times" onclick=processRadio()>
     <label for="radio_3">*</label></br>
     
-    <input type="radio" id="radio_4" name="arithmetic"   
+    <input type="radio" class="btn" id="radio_4" name="arithmetic"   
         value="divide" onclick=processRadio()>
     <label for="radio_4">/</label></br>
 
